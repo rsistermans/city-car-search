@@ -26,3 +26,4 @@ Technical
 - [ ] Organize components by Atomic Design principle
 - [ ] Create separate car search module
 - [ ] Cleanup filter logic
+- [ ] Smarter error handling, e.g. using interceptor
