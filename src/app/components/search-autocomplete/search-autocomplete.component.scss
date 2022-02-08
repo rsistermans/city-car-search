@@ -1,0 +1,28 @@
+@import "src/styles";
+
+.search-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: -1px 0 0;
+  padding: 0;
+  border: 1px solid $color-border;
+
+  &__result-button {
+    width: 300px;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    border: none;
+    background-color: $color-white;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      background-color: $color-background;
+    }
+  }
+}
+
+.error {
+  color: red;
+}

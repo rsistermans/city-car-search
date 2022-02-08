@@ -1,0 +1,21 @@
+<section class="car-search-results">
+  <h2>{{resultCount}} {{resultCount == 1 ? 'result' : 'results'}}</h2>
+  <ul class="car-search-results__list">
+    <li class="car-search-results__item" *ngFor="let carResult of carResults">
+      <a class="car-search-results__link" href="javascript:void(0)">
+        <img class="car-search-results__image"
+             [src]="carResult.car.images[0]"
+             [alt]="carResult.car.make" />
+        <h3 class="car-search-results__card-title">
+          {{carResult.car.make}} {{carResult.car.model}}
+        </h3>
+        <span class="car-search-results__card-price">
+          {{carResult.priceInformation.price | currency: carResult.priceInformation.isoCurrencyCode}}
+        </span>
+        <span class="car-search-results__card-user">
+          by {{carResult.user.firstName}}
+        </span>
+      </a>
+    </li>
+  </ul>
+</section>

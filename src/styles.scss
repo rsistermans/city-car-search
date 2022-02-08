@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+// colors
+$color-text: #62696c;
+$color-heading: #242729;
+$color-primary: #ff6600;
+$color-secondary: #0081b7;
+$color-white: #ffffff;
+$color-background: #eeeeee;
+$color-border: #cccccc;
+
+// typography
+$font-family: "Trebuchet MS", serif;
+$font-size: 16px;
+$heading-sizes: (
+  "large": 30px,
+  "medium": 24px,
+  "small": 18px
+);
+
+// responsive
+$breakpoints: (
+  "medium": 768px,
+  "large": 1024px
+);
+
+// base styles
+
+body, input, select, textarea, button {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color-text;
+}
+
+h1, h2, h3 {
+  color: $color-heading;
+}
+
+h1 {
+  font-size: map-get($heading-sizes, "large");
+}
+
+h2 {
+  font-size: map-get($heading-sizes, "medium");
+}
+
+h3 {
+  font-size: map-get($heading-sizes, "small");
+}
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}

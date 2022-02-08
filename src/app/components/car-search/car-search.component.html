@@ -1,0 +1,33 @@
+<form class="car-search" [formGroup]="searchForm">
+  <app-search-input
+    [control]="queryControl"
+    (query)="onQueryChange($event)"
+    (clear)="onClear()"
+  ></app-search-input>
+  <app-search-autocomplete
+    [results]="cities$"
+    (onAutocomplete)="selectCity($event)"
+  ></app-search-autocomplete>
+
+  <app-search-filter
+    [title]="'Distance'"
+    [options]="filters['distance']"
+    [control]="distanceControl"
+    (onFilterChange)="onFilterSelect()"
+  ></app-search-filter>
+
+  <app-search-filter
+    [title]="'Sort'"
+    [options]="filters['sort']"
+    [control]="sortControl"
+    (onFilterChange)="onFilterSelect()"
+  ></app-search-filter>
+
+  <ng-container *ngIf="!errorMessage; else showError">
+    <app-car-search-results *ngIf="searchData$ | async as data" [carResults]="data.results" [resultCount]="data.sums.totalResults"></app-car-search-results>
+  </ng-container>
+
+  <ng-template #showError>
+    <p class="error-message">{{errorMessage}}</p>
+  </ng-template>
+</form>

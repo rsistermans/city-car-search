@@ -1,0 +1,15 @@
+@import "src/styles";
+
+.search-input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  @include breakpoint("medium") {
+    display: inline-block;
+  }
+
+  &__field {
+    padding: 0.5rem 1rem;
+    font-family: "Trebuchet MS", serif;
+  }
+}

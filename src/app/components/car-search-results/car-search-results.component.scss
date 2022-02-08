@@ -1,0 +1,44 @@
+@import "src/styles";
+
+.car-search-results {
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    @include breakpoint("medium") {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include breakpoint("large") {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    color: $color-primary;
+    background: linear-gradient(to bottom, $color-secondary, transparent 50%, transparent 100%);
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      .car-search-results__image {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s;
+  }
+}

@@ -1,0 +1,11 @@
+<ul class="search-autocomplete" role="listbox" id="autocomplete" *ngIf="results; else noResults">
+  <li class="search-autocomplete__result" role="option" *ngFor="let result of results | async">
+    <button class="search-autocomplete__result-button" (click)="onClick(result)">
+      {{result.name}}
+    </button>
+  </li>
+</ul>
+
+<ng-template #noResults>
+  <!-- todo -->No results
+</ng-template>

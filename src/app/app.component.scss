@@ -1,0 +1,11 @@
+@import "../styles";
+
+.city-search-assignment {
+  margin: 1rem;
+  @include breakpoint("medium") {
+    margin: 4rem;
+  }
+  @include breakpoint("large") {
+    margin: 8rem;
+  }
+}

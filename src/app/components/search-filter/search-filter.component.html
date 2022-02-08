@@ -1,0 +1,13 @@
+<fieldset class="search-filter">
+  <span class="search-filter__placeholder">
+    {{title}}
+  </span>
+  <select class="search-filter__select" [formControl]="control">
+    <option class="search-filter__option"
+            *ngFor="let option of optionKeys"
+            [value]="option"
+            [disabled]="!option">
+      {{options[option]}}
+    </option>
+  </select>
+</fieldset>
